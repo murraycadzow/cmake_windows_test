@@ -31,7 +31,7 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: Cecilapp/GitHub-Pages-deploy@v3
               env:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   build_dir: docs/html
                   email: cadmu661@student.otago.ac.nz
