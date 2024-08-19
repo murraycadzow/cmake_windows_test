@@ -17,3 +17,10 @@ jobs:
               with:
                   build-dir: build
                   generator: "Visual Studio 17 2022"
+            - name: Deploy to GitHub Pages
+              uses: Cecilapp/GitHub-Pages-deploy@v3
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  build_dir: docs/html
+                  email: cadmu661@student.otago.ac.nz
