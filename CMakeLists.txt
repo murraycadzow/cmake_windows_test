@@ -6,21 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(LIBRARY_NAME Library)
 
+include(Docs)
 add_subdirectory(src)
 add_subdirectory(app)
 # set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}")
-
-
-option(BUILD_DOC "Build documentation" ON)
-find_package(Doxygen)
-set(DOXYFILE ${CMAKE_SOURCE_DIR}/Doxyfile)
-if (DOXYGEN_FOUND)
-    add_custom_target(docs
-        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/docs/
-        COMMENT "Generating HTML documentation with Doxygen"
-    )
-    message("Directory " ${PROJECT_SOURCE_DIR}/docs/)
-    else (DOXYGEN_FOUND)
-    message("Doxygen not found")
-endif (DOXYGEN_FOUND)
