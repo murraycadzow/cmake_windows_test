@@ -6,6 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(LIBRARY_NAME Library)
 
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 include(Docs)
 add_subdirectory(src)
 add_subdirectory(app)
