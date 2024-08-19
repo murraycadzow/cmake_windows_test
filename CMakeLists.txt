@@ -8,7 +8,7 @@ set(LIBRARY_NAME Library)
 
 add_subdirectory(src)
 add_subdirectory(app)
-
+# set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}")
 
 
 option(BUILD_DOC "Build documentation" ON)
@@ -17,10 +17,10 @@ set(DOXYFILE ${CMAKE_SOURCE_DIR}/Doxyfile)
 if (DOXYGEN_FOUND)
     add_custom_target(docs
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE}
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/docs/
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/docs/
         COMMENT "Generating HTML documentation with Doxygen"
     )
-    message("DIrectory " ${CMAKE_CURRENT_SOURCE_DIR}/docs/)
+    message("Directory " ${PROJECT_SOURCE_DIR}/docs/)
     else (DOXYGEN_FOUND)
     message("Doxygen not found")
 endif (DOXYGEN_FOUND)
